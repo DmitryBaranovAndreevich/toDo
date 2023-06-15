@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component is rendered without errors 1`] = `
+<div
+  className="container"
+>
+  <img
+    alt="Eisenhower matrix"
+    className="image"
+    src="eisenhower-matrix.jpg"
+  />
+  <a
+    className="info"
+    href="https://goal-life.com/page/method/matrix-eisenhower"
+  >
+    Want more details?
+  </a>
+</div>
+`;
