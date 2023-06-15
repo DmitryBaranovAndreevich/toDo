@@ -1,0 +1,37 @@
+.container {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input__checkbox {
+  outline: none;
+  margin: 0 10px;
+}
+
+.label {
+  width: 56%;
+  display: inline-block;
+  flex-grow: 1;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 226px;
+}
+
+.label_complete {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.removeButton {
+  transform: rotateZ(45deg);
+}
+
+.removeButton:hover {
+  transform: none;
+  transition: transform 200ms ease-in;
+}
