@@ -1,0 +1,14 @@
+.container {
+  width: 500px;
+  margin: 0 auto;
+  display: block;
+  text-align: right;
+}
+
+.image {
+  width: 100%;
+}
+
+.info {
+  font-family: fantasy, cursive;
+}
