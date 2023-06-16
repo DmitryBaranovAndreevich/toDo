@@ -38,4 +38,18 @@ describe('Тест функциональности task', () => {
     act(() => removeButton.click())
     expect(testFunc).toHaveBeenCalled();
   });
+  it('клик на чекбокс активен', () => {
+    const { container } = render(
+      <BrowserRouter>
+        <Context>
+          <Item taskText={'Test'} />
+        </Context>
+      </BrowserRouter>
+    );
+    const input = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
+    const testFunc = jest.fn();
+    input.onclick = testFunc;
+    act(() => input.click())
+    expect(testFunc).toHaveBeenCalled();
+  });
 });

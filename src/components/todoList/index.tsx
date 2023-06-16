@@ -1,7 +1,6 @@
-import styles from './todoList.module.css';
-import mainStyles from '../mainStyles/mainStyles.module.css';
 import Item from '../item';
-import { FC, FormEvent } from 'react';
+import { FC } from 'react';
+import Title from '../title';
 
 interface ITodoList {
   title: string;
@@ -12,7 +11,7 @@ interface ITodoList {
 const TodoList: FC<ITodoList> = ({ title, items, isFinish = false }) => {
   return (
     <div>
-      <h3 className={mainStyles.title}>{title}</h3>
+      <Title>{title}</Title>
       {items.map((el) => (
         <Item taskText={el} isComplete={isFinish} key={el} />
       ))}

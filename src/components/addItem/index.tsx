@@ -1,7 +1,9 @@
 import styles from './addItem.module.css';
-import mainStyles from '../mainStyles/mainStyles.module.css';
 import { useToDoContext } from '../context';
 import useInput from '../hooks/useInput';
+import Button from '../button';
+import Input from '../input';
+import Title from '../title';
 
 const AddItem = () => {
   const { state, setState } = useToDoContext();
@@ -15,12 +17,12 @@ const AddItem = () => {
 
   return (
     <div className={styles.container}>
-      <span className={mainStyles.title}>Add Item</span>
+      <Title>Add Item</Title>
       <div className={styles.wrapper}>
-        <input className={mainStyles.input} type="text" value={task} onChange={handleChange} />
-        <button className={mainStyles.button} onClick={createTask}>
+        <Input type="text" value={task} onChange={handleChange} />
+        <Button onClick={createTask} type={'button'}>
           Add
-        </button>
+        </Button>
       </div>
     </div>
   );

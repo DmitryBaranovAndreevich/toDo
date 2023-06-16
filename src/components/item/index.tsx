@@ -1,9 +1,10 @@
 import styles from './item.module.css';
-import mainStyles from '../mainStyles/mainStyles.module.css';
 import { ReactComponent as RemoveIcon } from '../../assets/remove.svg';
 import { FC, useState } from 'react';
 import { useToDoContext } from '../context';
 import useInput from '../hooks/useInput';
+import Button from '../button';
+import Input from '../input';
 
 export interface IItem {
   taskText: string;
@@ -52,18 +53,18 @@ const Item: FC<IItem> = ({ taskText, isComplete = false }) => {
         onClick={onCheckBoxClick}
       />
       {isEdit ? (
-        <input className={mainStyles.input} type="text" value={task} onChange={setTask} />
+        <Input type="text" value={task} onChange={setTask} />
       ) : (
         <label className={styles.label + ' ' + `${isComplete && styles.label_complete}`}>
           {task}
         </label>
       )}
-      <button className={mainStyles.button} onClick={toggleEdit}>
+      <Button onClick={toggleEdit} type={'button'}>
         {isEdit ? 'Save' : 'Edit'}
-      </button>
-      <button className={mainStyles.button + ' ' + styles.removeButton} onClick={removeTask}>
+      </Button>
+      <Button addClass={styles.removeButton} onClick={removeTask} type={'button'}>
         <RemoveIcon height="2em" />
-      </button>
+      </Button>
     </div>
   );
 };
